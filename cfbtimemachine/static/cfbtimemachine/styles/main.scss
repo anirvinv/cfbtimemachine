@@ -1,0 +1,71 @@
+@import 'variables';
+
+.title
+{
+    display: block;
+    text-align: left;
+}
+body{
+    // background-color: rgb(240, 240, 240);
+    // background: #CDD0CB;
+}
+a{
+    color: black;
+    text-decoration: none;
+    transition: 0.2s;
+}
+a:hover{
+    color: black;
+}
+.card-d{
+    transition: 0.2s;
+    // background: white;
+    
+    // background: $c3;
+    border-radius: 10px;
+    box-shadow: 0 8px 6px -6px rgb(102, 102, 102);
+    border: 3px solid rgba(106,106,106,.20);
+    *{
+    // color: rgb(106, 106, 106);
+    color: black;   
+    }
+   .top-body{
+       padding-bottom: 0;
+   }
+   .image{
+       padding-top: 0px;
+       padding-left: 10px;
+       padding-right: 10px;
+   }
+   .title{
+        padding-top: 0px;
+        font-family: 'Bebas Neue', cursive;
+        color: $c1;
+   }
+   .description{
+        font-family: 'Barlow', sans-serif;
+        font-size: large;  
+   }
+   .topic{
+        width: 100%;
+        padding: 0 15px 9px 15px;
+        .topic-name{
+            font-family: 'Kanit', sans-serif;
+            font-size: 25px;
+            p{
+                margin: 0;
+            }
+            display: flex;
+            align-items: center;
+            
+        }    
+        
+   }
+   hr{
+       margin: 0px;
+       border: 1px solid gray;
+   }
+}
+.card:hover{
+    transform: scale(1.01);
+}
