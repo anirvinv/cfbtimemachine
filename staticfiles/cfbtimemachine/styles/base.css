@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Bebas+Neue&family=Kanit:ital@1&family=Nanum+Gothic&display=swap");
+.navbar-custom {
+  background: #845de5;
+  -webkit-box-shadow: 0 4px 4px 0px rgba(214, 214, 214, 0.55);
+          box-shadow: 0 4px 4px 0px rgba(214, 214, 214, 0.55);
+}
+
+.navbar-custom .logo {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.navbar-custom .logo img {
+  height: 95%;
+}
+
+body {
+  background-color: white;
+  background-size: 20px 20px;
+  background-image: repeating-linear-gradient(0deg, #845de5, #845de5 1px, #e5e5f7 1px, #e5e5f7);
+}
+/*# sourceMappingURL=base.css.map */

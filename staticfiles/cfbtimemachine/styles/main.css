@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Bebas+Neue&family=Kanit:ital@1&family=Nanum+Gothic&display=swap");
+.title {
+  display: block;
+  text-align: left;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+a:hover {
+  color: black;
+}
+
+.card-d {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 8px 6px -6px #666666;
+          box-shadow: 0 8px 6px -6px #666666;
+  border: 3px solid rgba(106, 106, 106, 0.2);
+}
+
+.card-d * {
+  color: black;
+}
+
+.card-d .top-body {
+  padding-bottom: 0;
+}
+
+.card-d .image {
+  padding-top: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.card-d .title {
+  padding-top: 0px;
+  font-family: 'Bebas Neue', cursive;
+  color: #845de5;
+}
+
+.card-d .description {
+  font-family: 'Barlow', sans-serif;
+  font-size: large;
+}
+
+.card-d .topic {
+  width: 100%;
+  padding: 0 15px 9px 15px;
+}
+
+.card-d .topic .topic-name {
+  font-family: 'Kanit', sans-serif;
+  font-size: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card-d .topic .topic-name p {
+  margin: 0;
+}
+
+.card-d hr {
+  margin: 0px;
+  border: 1px solid gray;
+}
+
+.card:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+}
+/*# sourceMappingURL=main.css.map */
