@@ -1,7 +1,5 @@
 from django.urls import path, re_path
-from django.conf.urls import url
-from cfbtimemachine.models import Article
-from .views import ArticleListView, otherUrls
+from .views import ArticleListView
 from . import views
 
 urlpatterns = [
