@@ -11,3 +11,5 @@ class Article(models.Model):
     # if the article is a youtube link, then the image field is the date :/ lazy
     img = models.CharField(max_length=900)
     iframe = models.CharField(max_length=2)
+    college = models.CharField(max_length=900)
+    conference = models.CharField(max_length=900)
