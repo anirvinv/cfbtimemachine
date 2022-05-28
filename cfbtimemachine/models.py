@@ -13,3 +13,16 @@ class Article(models.Model):
     iframe = models.CharField(max_length=2)
     college = models.CharField(max_length=900)
     conference = models.CharField(max_length=900)
+
+class Conference(models.Model):
+    name = models.CharField(max_length=900)
+    def __str__(self):
+        return self.name
+class College(models.Model):
+    name = models.CharField(max_length=900)
+    def __str__(self):
+        return self.name
+class Player(models.Model):
+    name = models.CharField(max_length=900)
+    def __str__(self):
+        return self.name

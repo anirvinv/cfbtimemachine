@@ -5,7 +5,33 @@
 {% block stylesheets %} <link rel="stylesheet" href="{% static 'cfbtimemachine/styles/main.css' %}">{% endblock %}
 {% block scripts %} 
 {% endblock scripts %}
-{% block body %} 
+{% block body %}
+<div class="container dropdown-container">
+	<div class="dropdown d-flex justify-content-center">
+		<div class="btn-group col-6">
+			<button class="btn btn-primary my-2 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="">
+				College
+			  </button>
+			  <div class="dropdown-menu"style="width:100%; overflow-y:auto; height:300px;">
+				  <input class="form-control" id="myInput" type="text" placeholder="Search..">
+				  {% for college in colleges %}
+					  <a class="dropdown-item" href="{% url 'filter' college_id=college.id player_id='none' %}">{{college}}</a>
+				  {% endfor %}
+			  </div>
+		</div>
+		<div class="btn-group col-6">
+			<button class="btn btn-primary my-2 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="">
+				Player
+			  </button>
+			  <div class="dropdown-menu"style="width:100%; overflow-y:auto; height:300px;">
+				  <input class="form-control" id="playerInput" type="text" placeholder="Search..">
+				  {% for player in players %}
+					  <a class="dropdown-item" href="{% url 'filter' college_id='none' player_id=player.id %}">{{player}}</a>
+				  {% endfor %}
+			  </div>
+		</div>
+	</div>
+</div>
 <div class="container article_links infinite-container">
 	{% for card in articles %}
 		{% if card.link|is_video %}
@@ -54,11 +80,11 @@
 					<div class="card-body">
 						<div class="row">
 							<div class="col col-12">
-								<a target="_blank" href="iframe/{{card.id}}"><h1 class="card-title title display-5">{{ card.title|cut_others }}</h1></a>
+								<a target="_blank" href="{% url 'iframe' id=card.id %}"><h1 class="card-title title display-5">{{ card.title|cut_others }}</h1></a>
 							</div>
 						</div>
 					</div>
-						<a class ="image" target="_blank" href="iframe/{{card.id}}"><img src="{{card.img}}" onerror=this.src="{% static 'cfbtimemachine/images/default.jpg' %}" alt="Could not load image" class="card-img-bottom"></a>
+						<a class ="image" target="_blank" href="{% url 'iframe' id=card.id %}"><img src="{{card.img}}" onerror=this.src="{% static 'cfbtimemachine/images/default.jpg' %}" alt="Could not load image" class="card-img-bottom"></a>
 					<div class="card-body">
 						<p class="card-text description">{{card.description|cut_others}}</p>
 					</div>
@@ -83,4 +109,21 @@
 		onAfterPageLoad: function(){}
 	})
 </script>
+<script>
+	$(document).ready(function(){
+	  $("#myInput").on("keyup", function() {
+		var value = $(this).val().toLowerCase();
+		$(".dropdown-menu a").filter(function() {
+		  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+		});
+	  });
+
+	  $("#playerInput").on("keyup", function() {
+		var value = $(this).val().toLowerCase();
+		$(".dropdown-menu a").filter(function() {
+		  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+		});
+	  });
+	});
+	</script>
 {% endblock body %}

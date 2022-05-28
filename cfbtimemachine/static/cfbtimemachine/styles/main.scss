@@ -65,3 +65,8 @@ a:hover{
 .card:hover{
     transform: scale(1.01);
 }
+.dropdown-container{
+    button{
+        background: $c1 !important;
+    }
+}
