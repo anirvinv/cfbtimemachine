@@ -8,7 +8,7 @@
 {% block body %}
 <div class="container dropdown-container">
 	<div class="dropdown d-flex justify-content-center">
-		<div class="btn-group col-6">
+		<div class="btn-group col-lg-4 col-sm-5 col-xs-6 col-6 filter-button">
 			<button class="btn btn-primary my-2 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="">
 				College
 			  </button>
@@ -19,14 +19,14 @@
 				  {% endfor %}
 			  </div>
 		</div>
-		<div class="btn-group col-6">
+		<div class="btn-group col-lg-4 col-sm-5 col-xs-6 col-6 filter-button">
 			<button class="btn btn-primary my-2 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="">
 				Player
 			  </button>
 			  <div class="dropdown-menu"style="width:100%; overflow-y:auto; height:300px;">
 				  <input class="form-control" id="playerInput" type="text" placeholder="Search..">
 				  {% for player in players %}
-					  <a class="dropdown-item" href="{% url 'filter' college_id='none' player_id=player.id %}">{{player}}</a>
+					  <a class="dropdown-item" href="{% url 'filter' college_id='none' player_id=player.id %}">{{player.name|cut_football}}</a>
 				  {% endfor %}
 			  </div>
 		</div>

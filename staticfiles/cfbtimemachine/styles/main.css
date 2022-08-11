@@ -79,7 +79,19 @@ a:hover {
           transform: scale(1.01);
 }
 
+.dropdown-container {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 100px;
+  z-index: 1;
+}
+
 .dropdown-container button {
   background: #845de5 !important;
+}
+
+.dropdown-container .filter-button {
+  margin-left: 3px;
+  margin-right: 3px;
 }
 /*# sourceMappingURL=main.css.map */
